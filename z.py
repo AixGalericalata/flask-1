@@ -5,10 +5,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
-@app.route('/index/<title>')
-def index(title):
+@app.route('/list_prof/<list>')
+def training(list):
     param = {}
-    param['title'] = title
+    param['list'] = list
     return render_template('nigger.html', **param)
 
 
