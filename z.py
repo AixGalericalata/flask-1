@@ -1,13 +1,14 @@
 from flask import Flask, render_template
-import json
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
-@app.route('/index/<text>')
-def index(text):
+@app.route('/index/<title>')
+def index(title):
     param = {}
-    param['title'] = text
+    param['title'] = title
     return render_template('nigger.html', **param)
 
 
